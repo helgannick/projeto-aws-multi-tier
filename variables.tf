@@ -45,3 +45,16 @@ variable "database_subnets" {
   type        = list(string)
   default     = ["10.0.20.0/24", "10.0.21.0/24"]
 }
+
+variable "db_username" {
+  description = "Username do banco de dados"
+  type        = string
+  sensitive   = true
+  default     = "dbadmin"
+}
+
+variable "db_password" {
+  description = "Password do banco de dados"
+  type        = string
+  sensitive   = true
+}

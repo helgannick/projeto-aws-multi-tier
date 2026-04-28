@@ -53,3 +53,15 @@ module "ec2_asg" {
   alb_security_group_id = module.alb.alb_security_group_id
   target_group_arn      = module.alb.target_group_arn
 }
+
+module "rds" {
+  source = "./modules/rds"
+
+  project_name          = var.project_name
+  environment           = var.environment
+  vpc_id                = module.vpc.vpc_id
+  database_subnet_ids   = module.vpc.database_subnet_ids
+  ec2_security_group_id = module.ec2_asg.ec2_security_group_id
+  db_username           = var.db_username
+  db_password           = var.db_password
+}

@@ -37,3 +37,9 @@ output "asg_name" {
   description = "Nome do Auto Scaling Group"
   value       = module.ec2_asg.asg_name
 }
+
+output "rds_endpoint" {
+  description = "Endpoint do RDS PostgreSQL"
+  value       = module.rds.rds_endpoint
+  sensitive   = true
+}
