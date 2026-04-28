@@ -27,3 +27,13 @@ output "nat_gateway_ip" {
   description = "IP público do NAT Gateway"
   value       = module.vpc.nat_gateway_ip
 }
+
+output "alb_dns_name" {
+  description = "URL pública do Load Balancer — acesse no navegador!"
+  value       = module.alb.alb_dns_name
+}
+
+output "asg_name" {
+  description = "Nome do Auto Scaling Group"
+  value       = module.ec2_asg.asg_name
+}
