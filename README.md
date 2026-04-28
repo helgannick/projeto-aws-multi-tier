@@ -11,7 +11,7 @@
 
 ## 📐 Architecture
 
-<img src="docs/aws_multi_tier_architecture.svgZone.Identifier" width="600"/>
+<img src="docs/aws_multi_tier_architecture.svg" width="600"/>
 
 
 ### 🌐 Load Balancing — ALB distribuindo entre AZs
