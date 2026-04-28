@@ -58,3 +58,8 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+variable "alert_email" {
+  description = "Email para alertas do CloudWatch"
+  type        = string
+}

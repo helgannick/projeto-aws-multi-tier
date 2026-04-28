@@ -43,3 +43,13 @@ output "rds_endpoint" {
   value       = module.rds.rds_endpoint
   sensitive   = true
 }
+
+output "dashboard_url" {
+  description = "URL do Dashboard CloudWatch"
+  value       = module.monitoring.dashboard_url
+}
+
+output "sns_topic_arn" {
+  description = "ARN do topico SNS de alertas"
+  value       = module.monitoring.sns_topic_arn
+}

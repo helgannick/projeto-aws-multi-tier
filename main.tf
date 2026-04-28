@@ -65,3 +65,16 @@ module "rds" {
   db_username           = var.db_username
   db_password           = var.db_password
 }
+
+module "monitoring" {
+  source = "./modules/monitoring"
+
+  project_name         = var.project_name
+  environment          = var.environment
+  asg_name             = module.ec2_asg.asg_name
+  alb_arn_suffix       = module.alb.alb_arn_suffix
+  rds_identifier       = module.rds.rds_identifier
+  scale_out_policy_arn = module.ec2_asg.scale_out_policy_arn
+  scale_in_policy_arn  = module.ec2_asg.scale_in_policy_arn
+  alert_email          = var.alert_email
+}
