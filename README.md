@@ -11,24 +11,27 @@
 
 ## 📐 Architecture
 
-```
-Internet
-    │
-    ▼
-[Internet Gateway]
-    │
-    ▼
-[Application Load Balancer]          ← Public subnets (us-east-1a / us-east-1b)
-    │              │
-    ▼              ▼
-[EC2 + Nginx]  [EC2 + Nginx]         ← Private subnets — Auto Scaling Group
-    │
-    ▼
-[RDS PostgreSQL Primary]  ←sync→  [RDS Standby]   ← Database subnets — Multi-AZ
-    
-[CloudWatch Alarms] → [SNS] → Email  ← Monitoring
-```
+<img src="docs/aws_multi_tier_architecture.svgZone.Identifier" width="600"/>
 
+
+### 🌐 Load Balancing — ALB distribuindo entre AZs
+
+<img src="docs/Captura%20de%20tela%202026-04-28%20072921.png" width="600"/>
+<img src="docs/Captura%20de%20tela%202026-04-28%20072915.png" width="600"/>
+
+### 🗺️ VPC Resource Map
+
+<img src="docs/Captura%20de%20tela%202026-04-28%20075251.png" width="600"/>
+
+### 🗄️ RDS PostgreSQL Multi-AZ
+
+<img src="docs/Captura%20de%20tela%202026-04-28%20074151.png" width="600"/>
+<img src="docs/Captura%20de%20tela%202026-04-28%20075606.png" width="600"/>
+
+### 📊 CloudWatch Monitoring
+
+<img src="docs/Captura%20de%20tela%202026-04-28%20081559.png" width="600"/>
+<img src="docs/Captura%20de%20tela%202026-04-28%20081546.png" width="600"/>
 ---
 
 ## ✅ What this project solves
